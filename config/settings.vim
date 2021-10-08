@@ -3,6 +3,8 @@ filetype plugin on
 
 set timeoutlen=500
 set tabstop=2
+set numberwidth=4
+set signcolumn="auto:2,3"
 set expandtab
 set showmatch
 set shiftwidth=2

@@ -28,8 +28,14 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " [Language Server]
 Plug 'neovim/nvim-lspconfig' " lsp
+Plug 'nvim-lua/plenary.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " coq
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000 snippets
+
+" [Code action menu]
+Plug 'weilbith/nvim-code-action-menu'
 
 call plug#end()
 

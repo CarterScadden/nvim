@@ -5,6 +5,9 @@ augroup neovim
   "autocmd BufWritePre * ++nested lua require'lint'.try_lint()
 
   autocmd vimenter * ++nested colorscheme gruvbox
+  autocmd vimEnter * ++nested hi! Normal guibg=NONE ctermbg=NONE
+  autocmd vimenter * ++nested hi! CursorLine cterm=NONE ctermbg=grey ctermfg=white guibg=NONE guifg=NONE
+  autocmd vimenter * ++nested hi! LineNr guibg=NONE ctermbg=NONE
   autocmd VimEnter * call SetupLightlineColors()
   "autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx call FormatEslint()
 

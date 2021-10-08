@@ -1,16 +1,60 @@
 local coq = require('coq')
-local lsp = require('lspconfig')
+local lsp_config = require('lspconfig')
 
 local function Setup()
-  print("running setup...")
-  lsp.tsserver.setup{--coq.lsp_ensure_capabilities{
+  print("running ts & null_ls setup...")
+
+  require('null-ls').config {}
+  lsp_config["null-ls"].setup {}
+
+  lsp_config.tsserver.setup{--coq.lsp_ensure_capabilities{
     on_attach = function(client, bufnr)
       print("ts server attaching!")
-      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_formatting = false 
+      client.resolved_capabilities.document_range_formatting = false
 
-      if client.config.flags then
-        client.config.flags.allow_incremental_sync = true
-      end
+      local ts_utils = require("nvim-lsp-ts-utils")
+
+      ts_utils.setup {
+        debug = true,
+        disable_commands = false,
+        enable_import_on_completion = true,
+
+        -- import all
+        import_all_timeout = 5000, -- ms
+        import_all_priorities = {
+            buffers = 4, -- loaded buffer names
+            buffer_content = 3, -- loaded buffer content
+            local_files = 2, -- git files or files with relative path markers
+            same_file = 1, -- add to existing import statement
+        },
+        import_all_scan_buffers = 100,
+        import_all_select_source = false,
+
+        -- eslint
+        eslint_enable_code_actions = true,
+        eslint_enable_disable_comments = true,
+        eslint_bin = "eslint_d",
+        eslint_enable_diagnostics = true,
+        eslint_opts = {},
+
+        -- formatting
+        enable_formatting = true,
+        formatter = "eslint_d",
+        formatter_opts = {},
+
+        -- update imports on file move
+        update_imports_on_move = true,
+        require_confirmation_on_move = false,
+        watch_dir = nil,
+
+        -- filter diagnostics
+        filter_out_diagnostics_by_severity = {},
+        filter_out_diagnostics_by_code = {},
+      }
+
+      -- required to fix code action ranges and filter diagnostics
+      ts_utils.setup_client(client)
 
       local opts = { noremap=true, silent=true }
       local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -50,6 +94,12 @@ local function Setup()
 
       buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
       buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+      -- format on save 
+      vim.cmd [[augroup Format]]
+      vim.cmd [[autocmd! * <buffer>]]
+      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+      vim.cmd [[augroup END]]
     end
   } -- }
 end
