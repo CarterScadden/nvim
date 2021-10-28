@@ -22,6 +22,8 @@ nnoremap <C-l> <C-W>l
 " generate docs
 nmap <A-;> :DogeGenerate<CR>
 
+nmap <leader>o :vsplit ~/todo<CR>
+
 "nmap <silent> gd <Plug>(coc-definition)
 "nmap <silent> gy <Plug>(coc-type-definition)
 "nmap <silent> gr <Plug>(coc-references)

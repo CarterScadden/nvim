@@ -1,6 +1,7 @@
 set clipboard=unnamedplus
 filetype plugin on
 
+set splitright
 set timeoutlen=500
 set tabstop=2
 set numberwidth=4
@@ -18,7 +19,7 @@ set number
 set relativenumber
 
 set wildmenu
-set foldmethod=indent
+set foldmethod=manual
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
@@ -33,5 +34,7 @@ set linebreak
 set timeoutlen=500
 
 set laststatus=2
+"set statusline=%{FugitiveStatusline()}
+set ruler
 set noshowmode
 set termguicolors

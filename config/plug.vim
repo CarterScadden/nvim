@@ -1,9 +1,6 @@
-
-
-
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-Plug 'CarterScadden/neovim-window'
+"Plug 'CarterScadden/neovim-window'
 
 "" [FZF] file explorer
 Plug 'junegunn/fzf.vim'
@@ -16,9 +13,12 @@ Plug 'rbgrouleff/bclose.vim'
 " [Syntax highlighting]
 Plug 'sheerun/vim-polyglot'
 
+" [Git]
+Plug 'tpope/vim-fugitive'
+
 " [Theme]
-Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'haishanh/night-owl.vim'
 
 " Window Splitting
 Plug 'beauwilliams/focus.nvim'

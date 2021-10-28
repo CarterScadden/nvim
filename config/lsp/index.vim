@@ -1,9 +1,13 @@
-let g:coq_settings = {  }
-let g:coq_settings = { "keymap.recommended": v:false, 'auto_start': 'shut-up', 'keymap.manual_complete': '<C-space>', 'keymap.jump_to_mark': '<A-h>' }
+let g:coq_settings = {
+      \ "keymap.recommended": v:false,
+      \ 'auto_start': 'shut-up',
+      \ 'keymap.manual_complete': '<C-space>',
+      \ 'keymap.jump_to_mark': '<A-h>'
+      \ }
 
 lua << EOF
 
-local servers = require('servers')
+local language_server_manager = require('language_server_manager')
 
-servers.InitServers()
+language_server_manager.Setup()
 EOF
