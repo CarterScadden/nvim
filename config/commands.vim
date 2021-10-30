@@ -10,10 +10,7 @@ augroup neovim
   "autocmd vimenter * ++nested hi! LineNr     cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
   "autocmd vimenter * ++nested hi! SignColumn cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
   "autocmd vimenter * ++nested hi! Normal guibg=none ctermbg=none
-  "autocmd vimenter * ++nested hi! LineNr guibg=none ctermbg=none
-  "autocmd vimenter * ++nested hi! Folded guibg=none ctermbg=none
-  "autocmd vimenter * ++nested hi! NonText guibg=none ctermbg=none
-  "autocmd vimenter * ++nested hi! SpecialKey guibg=none ctermbg=none
+  "autocmd vimenter * ++nested hi! LineNr guibg=none ctermbg=none autocmd vimenter * ++nested hi! Folded guibg=none ctermbg=none autocmd vimenter * ++nested hi! NonText guibg=none ctermbg=none autocmd vimenter * ++nested hi! SpecialKey guibg=none ctermbg=none
   "autocmd vimenter * ++nested hi! VertSplit guibg=none ctermbg=none
   "autocmd vimenter * ++nested hi! SignColumn guibg=none ctermbg=none
   "autocmd vimenter * ++nested hi! EndOfBuffer guibg=none ctermbg=none
@@ -48,5 +45,6 @@ endfunction
 
 function! FormatEslint()
   :EslintFixAll
+  :w
 endfunction
 

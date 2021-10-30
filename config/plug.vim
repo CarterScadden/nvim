@@ -6,15 +6,15 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" [Ranger] directory explorer
-Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 
 " [Syntax highlighting]
 Plug 'sheerun/vim-polyglot'
 
 " [Git]
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " [Theme]
 Plug 'itchyny/lightline.vim'
@@ -41,7 +41,6 @@ call plug#end()
 
 execute 'source' '~/.config/nvim/config/lsp/index.vim'
 execute 'source' '~/.config/nvim/config/plugins/fzf.vim'
-execute 'source' '~/.config/nvim/config/plugins/ranger.vim'
 execute 'source' '~/.config/nvim/config/plugins/doge.vim'
 execute 'source' '~/.config/nvim/config/plugins/focus.vim'
 execute 'source' '~/.config/nvim/config/plugins/theme.vim'

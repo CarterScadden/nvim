@@ -19,19 +19,11 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
+"open netrw
+noremap <C-e> :Ranger<CR>
+
 " generate docs
 nmap <A-;> :DogeGenerate<CR>
 
+" open ~/todo file with \ o
 nmap <leader>o :vsplit ~/todo<CR>
-
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gr <Plug>(coc-references)
-"nmap <silent> <F2> <Plug>(coc-rename)
-"nnoremap <C-i> :call <SID>show_documentation()<CR>
-"nmap <F6> <Plug>(coc-diagnostic-prev)
-"nmap <F8> <Plug>(coc-diagnostic-next)
-"nnoremap <silent><expr> <C-space> coc#refresh()
-"inoremap <silent><expr> <c-space> coc#refresh()
-"nmap <A-i> :CocAction<CR>
-

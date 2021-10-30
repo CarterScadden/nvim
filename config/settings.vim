@@ -1,6 +1,8 @@
 set clipboard=unnamedplus
 filetype plugin on
 
+let g:netrw_liststyle=3
+
 set splitright
 set timeoutlen=500
 set tabstop=2
