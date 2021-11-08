@@ -19,7 +19,7 @@ local function Use(client, bufnr)
   buf_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<C-i>', '<cmd>lua vim.lsp.buf.hover()<CR>', opts) -- show information, (show jsdoc info, [var name: type/value]
   buf_set_keymap('n', '<A-i>', ':CodeActionMenu<CR>', opts) -- code actions, (remove, import, fix spelling, etc)
-  --buf_set_keymap('n', '<A-i>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  -- buf_set_keymap('n', '<A-i>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<A-I>', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 
   buf_set_keymap('n', '<Left>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)

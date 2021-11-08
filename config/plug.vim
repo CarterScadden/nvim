@@ -19,6 +19,7 @@ Plug 'airblade/vim-gitgutter'
 " [Theme]
 Plug 'itchyny/lightline.vim'
 Plug 'haishanh/night-owl.vim'
+Plug 'dracula/vim'
 
 " Window Splitting
 Plug 'beauwilliams/focus.nvim'

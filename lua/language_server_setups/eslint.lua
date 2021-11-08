@@ -6,7 +6,16 @@ local function Setup()
  lsp_config.eslint.setup{
    on_attach = function(client, bufnr)
       key_bindings.Use(client, bufnr)
-      commands.Use()
+      --vim.cmd('autocmd BufWritePre <buffer> EslintFixAll')
+
+      vim.cmd([[
+      augroup EslintCommands
+         autocmd!
+         autocmd BufWritePre <buffer> EslintFixAll
+      augroup END
+      ]])
+
+      -- commands.Use()
    end
  }
 end

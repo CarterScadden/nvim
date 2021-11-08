@@ -1,3 +1,4 @@
 set termguicolors
-colorscheme night-owl
+"colorscheme night-owl
+colorscheme dracula
 

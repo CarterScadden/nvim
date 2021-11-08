@@ -3,11 +3,10 @@ local key_bindings = require 'utils/key_bindings'
 local commands = require 'utils/commands'
 
 local function Setup()
-  lsp_config.tsserver.setup{
+  print("setting up elmls")
+  lsp_config.elmls.setup{
     on_attach = function(client, bufnr)
-      client.resolved_capabilities.document_formatting = false 
-      client.resolved_capabilities.document_range_formatting = false
-
+      print("attaching elmls")
       key_bindings.Use(client, bufnr)
       commands.Use()
     end

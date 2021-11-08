@@ -2,12 +2,13 @@ local lsp_config = require 'lspconfig'
 local pretty_diagnostics = require 'utils/pretty_diagnostics'
 
 local langauge_servers = {
+  'elm',
   'cpp',
   'eslint',
   'python',
   'tailwind',
   'typescript',
-  'vim'
+  'vim',
 }
 
 local function setup_servers(i, max)

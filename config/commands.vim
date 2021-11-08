@@ -16,10 +16,11 @@ augroup neovim
   "autocmd vimenter * ++nested hi! EndOfBuffer guibg=none ctermbg=none
 
   autocmd VimEnter * call SetupLightlineColors()
-  autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx call FormatEslint()
+  "autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx call FormatEslint()
 
   command FormatJSON call FormatJSON()
   command FormatEslint call FormatEslint()
+  command GPushUp call GPushUp()
 
 augroup END
 
@@ -48,3 +49,6 @@ function! FormatEslint()
   :w
 endfunction
 
+function! GPushUp()
+  :Git -c push.default=current push
+endfunction
