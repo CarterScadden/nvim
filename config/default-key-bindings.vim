@@ -27,3 +27,6 @@ nmap <A-;> :DogeGenerate<CR>
 
 " open ~/todo file with \ o
 nmap <leader>o :vsplit ~/todo<CR>
+
+" multi cursor on ctrl d (:h visual-multi)
+nmap <C-d> <C-n>

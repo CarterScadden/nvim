@@ -21,11 +21,14 @@ Plug 'itchyny/lightline.vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'dracula/vim'
 
-" Window Splitting
+" [Window Splitting]
 Plug 'beauwilliams/focus.nvim'
 
 " [Documenter]
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
+" [Multi Cursor]
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " [Language Server]
 Plug 'neovim/nvim-lspconfig' " lsp
