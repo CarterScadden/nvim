@@ -41,6 +41,9 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000 snippets
 " [Code action menu]
 Plug 'weilbith/nvim-code-action-menu'
 
+" [Rust]
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 execute 'source' '~/.config/nvim/config/lsp/index.vim'

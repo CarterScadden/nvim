@@ -3,11 +3,10 @@ local key_bindings = require 'utils/key_bindings'
 local commands = require 'utils/commands'
 
 local function Setup()
-  lsp_config.elmls.setup{
+  lsp_config.rust_analyzer.setup{
     on_attach = function(client, bufnr)
-      print("attaching elmls")
       key_bindings.Use(client, bufnr)
-      commands.Use()
+      commands.Use(true)
     end
   }
 end

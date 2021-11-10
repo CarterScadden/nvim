@@ -11,7 +11,7 @@ local function Setup()
       vim.cmd([[
       augroup EslintCommands
          autocmd!
-         autocmd BufWritePre <buffer> EslintFixAll
+         autocmd BufWritePre * ++nested EslintFixAll
       augroup END
       ]])
 

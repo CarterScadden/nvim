@@ -2,6 +2,7 @@ local lsp_config = require 'lspconfig'
 local pretty_diagnostics = require 'utils/pretty_diagnostics'
 
 local langauge_servers = {
+  'rust',
   'elm',
   'cpp',
   'eslint',
