@@ -22,7 +22,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'dracula/vim'
 
 " [Window Splitting]
-Plug 'beauwilliams/focus.nvim'
+"Plug 'beauwilliams/focus.nvim'
 
 " [Documenter]
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }

@@ -1,8 +1,8 @@
 set clipboard=unnamedplus
 filetype plugin on
+set spell spelllang=en_us
 
 let g:netrw_liststyle=3
-
 set list
 set listchars=trail:-,eol:$
 set splitright

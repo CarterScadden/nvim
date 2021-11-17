@@ -1,1 +1,1 @@
-lua require("focus").setup()
+"lua require("focus").setup()
