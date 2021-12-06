@@ -1,2 +1,1 @@
-# nvim
-# nvim
+# Carter's Neovim config
