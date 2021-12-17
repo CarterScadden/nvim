@@ -1,5 +1,8 @@
 -- RANGER
-vim.cmd "let g:ranger_map_keys = 0"
+vim.cmd [[
+  let g:ranger_map_keys = 0
+  let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+]]
 
 -- COLORIZOR
 vim.cmd "set termguicolors"
@@ -15,3 +18,14 @@ vim.cmd [[
     set t_Co=256
   endif
 ]]
+
+-- COQ
+vim.cmd [[
+  let g:coq_settings = {
+    \ "auto_start": "shut-up",
+    \ "keymap.jump_to_mark": "<leader>j",
+    \ }
+]]
+
+-- TESTING -- rcarriga/vim-ultest
+vim.cmd "let g:ultest_use_pty = 1"

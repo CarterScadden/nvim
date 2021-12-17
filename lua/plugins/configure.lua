@@ -1,8 +1,32 @@
 -- ## TELESCOPE ## --
+
 vim.cmd [[
-  nnoremap <C-p> <cmd>Telescope find_files<cr>
-  nnoremap <C-r> <cmd>Telescope live_grep<cr>
+  nnoremap <C-p> <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
+  nnoremap <C-r> <cmd>Telescope live_grep --hidden<cr>
 ]]
+
+local telescope = require('telescope')
+telescope.setup{
+  defaults = {
+    -- mappings = {
+    --   i = {
+    --     ["<esc>"] = vim.actions.close
+    --   },
+    -- },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case"
+      -- "--trim" -- add this value
+    }
+  }
+}
+
+-- telescope.load_extension('rg')
 
 -- ## COLOR SCHEME ## --
 vim.cmd "colorscheme dracula"
@@ -30,7 +54,8 @@ colorizer.setup()
 vim.cmd "noremap <C-e> <cmd>Ranger<CR>"
 
 -- ## PRESENCE ## --
---
+
+--[[
 local presence = require "presence"
 
 presence:setup({
@@ -47,7 +72,7 @@ presence:setup({
     -- client_id           = "209066889714860032",       
     -- Log messages at or above this level
     -- (one of the following: "debug", "info", "warn", "error")
-    log_level           = "debug",                        
+    log_level           = "error",                        
     -- Number of seconds to debounce events
     -- (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
     debounce_timeout    = 10,                         
@@ -62,17 +87,27 @@ presence:setup({
 
     -- Rich Presence text options
     -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
-    editing_text        = "Editing %s",               
+    -- editing_text        = "Editing %s",               
     -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
-    file_explorer_text  = "Browsing %s",              
+    -- file_explorer_text  = "Browsing %s",              
     -- Format string rendered when committing changes in git (either string or function(filename: string): string)
     git_commit_text     = "Committing changes",       
     -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
     plugin_manager_text = "Managing plugins",         
     -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
-    reading_text        = "Reading %s",               
+    -- reading_text        = "Reading %s",               
     -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
-    workspace_text      = "Working on %s",            
+    -- workspace_text      = "Working on %s",            
     -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
-    line_number_text    = "Line %s out of %s",        
+    -- line_number_text    = "Line %s out of %s",        
 })
+--]]
+
+-- TESTING -- vim-test/vim-test
+-- UPDATE THESE
+-- :help ultest-commands
+vim.cmd [[
+  nmap <leader>f :TestFile<CR>
+  nmap <leader>s :TestSuite<CR>
+  nmap <leader>v :TestVisit<CR>
+]]

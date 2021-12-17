@@ -80,6 +80,16 @@ _G.packer_plugins = {
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/bclose.vim",
     url = "https://github.com/rbgrouleff/bclose.vim"
   },
+  coq_nvim = {
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/coq_nvim",
+    url = "https://github.com/ms-jpq/coq_nvim"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
   fzf = {
     loaded = true,
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/fzf",
@@ -132,6 +142,12 @@ _G.packer_plugins = {
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
   },
+  ["tabby.nvim"] = {
+    config = { "\27LJ\2\2m\0\0\4\0\a\0\f6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\5\0006\2\0\0'\3\3\0B\2\2\0029\2\4\2=\2\6\1B\0\2\1K\0\1\0\ftabline\1\0\0\rtab_only\18tabby.presets\nsetup\ntabby\frequire\0" },
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/tabby.nvim",
+    url = "https://github.com/nanozuki/tabby.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -157,6 +173,21 @@ _G.packer_plugins = {
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
+  ["vim-graphql"] = {
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/vim-graphql",
+    url = "https://github.com/jparise/vim-graphql"
+  },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
+  },
+  ["vim-ultest"] = {
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/vim-ultest",
+    url = "https://github.com/rcarriga/vim-ultest"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
@@ -165,6 +196,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: tabby.nvim
+time([[Config for tabby.nvim]], true)
+try_loadstring("\27LJ\2\2m\0\0\4\0\a\0\f6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\5\0006\2\0\0'\3\3\0B\2\2\0029\2\4\2=\2\6\1B\0\2\1K\0\1\0\ftabline\1\0\0\rtab_only\18tabby.presets\nsetup\ntabby\frequire\0", "config", "tabby.nvim")
+time([[Config for tabby.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\2_\0\0\3\0\5\0\n6\0\0\0'\1\1\0B\0\2\0029\0\2\0006\1\0\0'\2\3\0B\1\2\0029\1\4\1B\0\2\1K\0\1\0\topts\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")

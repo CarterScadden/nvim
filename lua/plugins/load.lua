@@ -3,6 +3,8 @@ local packer = require "packer"
 return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
 
+  use 'stevearc/dressing.nvim'
+
   -- Git
   use "tpope/vim-fugitive"
   use "airblade/vim-gitgutter"
@@ -27,6 +29,10 @@ return packer.startup(function(use)
 
   -- LSP [Live Server Protocol]
   use "neovim/nvim-lspconfig"
+  use {
+    "ms-jpq/coq_nvim",
+    branch = "coq"
+  }
 
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -69,5 +75,27 @@ return packer.startup(function(use)
 
   -- discord presence
   use 'andweeb/presence.nvim'
+
+  -- testing
+  use "vim-test/vim-test"
+
+  use {
+    "rcarriga/vim-ultest",
+    requires = {"vim-test/vim-test"},
+    run = ":UpdateRemotePlugins"
+  }
+
+  -- Graphql support
+  use "jparise/vim-graphql"
+
+  -- tabline
+  use {
+    "nanozuki/tabby.nvim",
+    config = function()
+      require("tabby").setup({
+        tabline = require("tabby.presets").tab_only
+      })
+    end,
+  }
 end)
 

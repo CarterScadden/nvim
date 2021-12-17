@@ -13,6 +13,7 @@ for _, server in pairs({
   "tailwind",
   "typescript",
   "vim",
+  "graphql",
 }) do
   require ("lsp/servers/" .. server)
 end
