@@ -16,9 +16,9 @@ vim.cmd [[
   set ignorecase
   set smartcase
   set smartindent
+  set foldmethod=indent
   set number
   set wildmenu
-  set foldmethod=manual
   set foldenable
   set foldlevelstart=10
   set foldnestmax=10
@@ -34,4 +34,5 @@ vim.cmd [[
   set ruler
   set noshowmode
   set termguicolors
+  set nocursorline
 ]]

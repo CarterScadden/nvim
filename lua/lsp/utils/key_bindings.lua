@@ -21,9 +21,9 @@ local function Use(client, bufnr)
   -- buf_set_keymap('i', '<C-space>', '<C-x><c-o>', opts)
   -- buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.completion()<CR>', opts)
   -- buf_set_keymap("n", "<A-i>", ":CodeActionMenu<CR>", opts) -- code actions, (remove, import, fix spelling, etc)
-  buf_set_keymap("n", "<A-i>", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  buf_set_keymap("n", "<A-I>", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
-  buf_set_keymap("n", "<A-I>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  buf_set_keymap("n", "<A-i>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
   buf_set_keymap("n", "<Left>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   buf_set_keymap("n", "<Right>", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)

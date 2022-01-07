@@ -90,6 +90,12 @@ _G.packer_plugins = {
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
+  ["focus.nvim"] = {
+    config = { "\27LJ\2\0023\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nfocus\frequire\0" },
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/focus.nvim",
+    url = "https://github.com/beauwilliams/focus.nvim"
+  },
   fzf = {
     loaded = true,
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/fzf",
@@ -121,6 +127,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/carter/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/carter/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -196,6 +207,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: focus.nvim
+time([[Config for focus.nvim]], true)
+try_loadstring("\27LJ\2\0023\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nfocus\frequire\0", "config", "focus.nvim")
+time([[Config for focus.nvim]], false)
 -- Config for: tabby.nvim
 time([[Config for tabby.nvim]], true)
 try_loadstring("\27LJ\2\2m\0\0\4\0\a\0\f6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\5\0006\2\0\0'\3\3\0B\2\2\0029\2\4\2=\2\6\1B\0\2\1K\0\1\0\ftabline\1\0\0\rtab_only\18tabby.presets\nsetup\ntabby\frequire\0", "config", "tabby.nvim")

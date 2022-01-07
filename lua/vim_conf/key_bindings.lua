@@ -28,4 +28,7 @@ vim.cmd [[
 
   " multi cursor on ctrl d (:h visual-multi)
   nmap <C-d> <C-n>
+
+  " hard mode enable
+  nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 ]]

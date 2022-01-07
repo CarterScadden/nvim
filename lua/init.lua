@@ -8,3 +8,6 @@ require "vim_conf/commands"
 require "vim_conf/key_bindings"
 
 require "lsp/init"
+
+require "custom/index"
+

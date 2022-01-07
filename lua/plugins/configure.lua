@@ -2,8 +2,10 @@
 
 vim.cmd [[
   nnoremap <C-p> <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
-  nnoremap <C-r> <cmd>Telescope live_grep --hidden<cr>
+  "nnoremap <C-r> <cmd>Telescope live_grep --hidden<cr>
 ]]
+
+vim.api.nvim_set_keymap('n', '<C-r>', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', {})
 
 local telescope = require('telescope')
 telescope.setup{
@@ -106,8 +108,10 @@ presence:setup({
 -- TESTING -- vim-test/vim-test
 -- UPDATE THESE
 -- :help ultest-commands
+--[[
 vim.cmd [[
   nmap <leader>f :TestFile<CR>
   nmap <leader>s :TestSuite<CR>
   nmap <leader>v :TestVisit<CR>
 ]]
+--]]

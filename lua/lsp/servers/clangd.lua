@@ -1,11 +1,14 @@
-local lsp_config = require "lspconfig"
 local key_bindings = require "lsp/utils/key_bindings"
 local commands = require "lsp/utils/commands"
 
-lsp_config.rust_analyzer.setup{
+return {
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--suggest-missing-includes",
+  },
   on_attach = function(client, bufnr)
     key_bindings.Use(client, bufnr)
-    commands.Use(true)
+    commands.Use()
   end
 }
-

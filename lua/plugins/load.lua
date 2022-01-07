@@ -1,9 +1,20 @@
 local packer = require "packer"
 
 return packer.startup(function(use)
+  use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
 
-  use 'stevearc/dressing.nvim'
+  -- automatically resize windows
+  use {
+    "beauwilliams/focus.nvim",
+    config = function()
+      require("focus").setup()
+    end
+  }
+
+
+  -- ui plugin for nice looking stuff
+  use "stevearc/dressing.nvim"
 
   -- Git
   use "tpope/vim-fugitive"
@@ -97,5 +108,6 @@ return packer.startup(function(use)
       })
     end,
   }
+
 end)
 
