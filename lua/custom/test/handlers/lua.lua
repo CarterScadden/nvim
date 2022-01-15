@@ -1,5 +1,14 @@
-local function lua_handler(path, file_type)
+local function lua_folder(path, file_type)
   print("No test runner found for lua")
 end
 
-return lua_handler
+local function lua_file(path, file_type)
+  print("No test runner found for lua")
+end
+
+return function(path, file_type)
+  return {
+    file = function () lua_file(path, file_type) end,
+    project = function() lua_folder(path, file_type) end,
+  }
+end

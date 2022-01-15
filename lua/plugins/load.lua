@@ -4,6 +4,29 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
 
+  use {
+    --:TransparentToggle
+    "xiyaowong/nvim-transparent",
+    config = function()
+      require("transparent").setup({
+        enable = false,
+        -- additional groups that should be clear
+        extra_groups = { 
+          -- example of akinsho/nvim-bufferline.lua
+          "BufferLineTabClose",
+          "BufferlineBufferSelected",
+          "BufferLineFill",
+          "BufferLineBackground",
+          "BufferLineSeparator",
+          "BufferLineIndicatorSelected",
+        },
+         -- groups you don't want to clear
+        exclude = {},
+      })
+    end
+  }
+
+
   -- automatically resize windows
   use {
     "beauwilliams/focus.nvim",
@@ -109,5 +132,22 @@ return packer.startup(function(use)
     end,
   }
 
+  use {
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    -- load only on require("tailwindcss-colors")
+    module = "tailwindcss-colors",
+    -- run the setup function after plugin is loaded 
+    config = function ()
+      -- pass config options here (or nothing to use defaults)
+      require("tailwindcss-colors").setup()
+    end
+  }
+
+  -- use {
+  --   "steelsojka/headwind.nvim",
+  --   config = function()
+  --     require("headwind").setup()
+  --   end
+  -- } 
 end)
 

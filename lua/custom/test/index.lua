@@ -39,26 +39,40 @@ local function file_type_handler_generator(file_type)
   return _file_type_handler_generator[file_type]
 end
 
---       --
-
-local function test_current_file()
+local function get_current_test_object()
   local path = vim.fn.expand("%")
   local file_type = get_file_type(path)
+
+  if file_type == nil then
+    error("File type not found for '" .. path .. "'")
+  end
 
   local handler = file_type_handler_generator(file_type)
 
   if handler ~= nil then
-    handler(path, file_type)
-    return
+    return handler(path, file_type)
   end
 
   error("Could not find `" .. file_type .. "` handler on path: `" .. path .. "`")
 end
+--       --
+
+local function test_current_file()
+  get_current_test_object().file()
+end
+
+local function test_current_project()
+  get_current_test_object().project()
+end
+
+
 
 Custom_Test = {
   test_current_file = test_current_file,
+  test_project = test_current_project
 }
 
 -- vim.cmd "nmap <leader>f :call lua test_current_file()<cr>"
 
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua Custom_Test.test_current_file()<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>lua Custom_Test.test_project()<CR>', {})

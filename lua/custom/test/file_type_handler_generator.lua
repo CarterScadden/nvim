@@ -3,6 +3,9 @@ local file_type_handler_generator = {}
 local handlers = {
   "lua",
   "js",
+  "jsx",
+  "ts",
+  "tsx",
 }
 
 for _, name in pairs(handlers) do
