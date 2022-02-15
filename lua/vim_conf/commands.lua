@@ -2,7 +2,7 @@ vim.cmd [[
   augroup COMMANDS
     autocmd!
 
-    autocmd VimEnter * call SetupLightlineColors()
+    " autocmd VimEnter * call SetupLightlineColors()
 
     command FormatJSON call FormatJSON()
     command FormatEslint call FormatEslint()

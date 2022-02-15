@@ -1,0 +1,5 @@
+require "plugins/after/test"
+require "plugins/after/telescope"
+require "plugins/after/nnn"
+require "plugins/after/spectre"
+require "plugins/after/gitsigns"

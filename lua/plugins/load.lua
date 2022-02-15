@@ -10,17 +10,6 @@ return packer.startup(function(use)
     config = function()
       require("transparent").setup({
         enable = false,
-        -- additional groups that should be clear
-        extra_groups = { 
-          -- example of akinsho/nvim-bufferline.lua
-          "BufferLineTabClose",
-          "BufferlineBufferSelected",
-          "BufferLineFill",
-          "BufferLineBackground",
-          "BufferLineSeparator",
-          "BufferLineIndicatorSelected",
-        },
-         -- groups you don't want to clear
         exclude = {},
       })
     end
@@ -41,7 +30,10 @@ return packer.startup(function(use)
 
   -- Git
   use "tpope/vim-fugitive"
-  use "airblade/vim-gitgutter"
+  use {
+    "lewis6991/gitsigns.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  }
 
   -- Status line
   use "itchyny/lightline.vim"
@@ -69,13 +61,18 @@ return packer.startup(function(use)
   }
 
   use {
+    "ms-jpq/coq.artifacts",
+    branch = "artifacts"
+  }
+
+  use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
 
   use {
     "nvim-telescope/telescope.nvim",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    requires = "nvim-lua/plenary.nvim"
   }
 
   use "rust-lang/rust.vim"
@@ -83,13 +80,6 @@ return packer.startup(function(use)
   -- use "sunjon/shade.nvim"
   use "norcalli/nvim-colorizer.lua"
 
-
-  use {
-      'goolord/alpha-nvim',
-      config = function ()
-          require"alpha".setup(require"alpha.themes.dashboard".opts)
-      end
-  }
 
   use {
     "junegunn/fzf",
@@ -103,34 +93,36 @@ return packer.startup(function(use)
     ft = "qt"
   }
 
-  -- ranger, ctrl-e
-  use "rbgrouleff/bclose.vim"
-  use "francoiscabrol/ranger.vim"
+  use "mcchrish/nnn.vim"
 
   -- discord presence
   use 'andweeb/presence.nvim'
 
   -- testing
-  use "vim-test/vim-test"
+  use {
+    "mfussenegger/nvim-dap"
+  }
 
   use {
-    "rcarriga/vim-ultest",
-    requires = {"vim-test/vim-test"},
-    run = ":UpdateRemotePlugins"
+    "Pocco81/DAPInstall.nvim"
+  }
+
+  use {
+    "rcarriga/nvim-dap-ui"
+  }
+
+  use {
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end
+  }
+  use {
+    "rcarriga/vim-ultest"
   }
 
   -- Graphql support
   use "jparise/vim-graphql"
-
-  -- tabline
-  use {
-    "nanozuki/tabby.nvim",
-    config = function()
-      require("tabby").setup({
-        tabline = require("tabby.presets").tab_only
-      })
-    end,
-  }
 
   use {
     "themaxmarchuk/tailwindcss-colors.nvim",
@@ -143,11 +135,26 @@ return packer.startup(function(use)
     end
   }
 
-  -- use {
-  --   "steelsojka/headwind.nvim",
-  --   config = function()
-  --     require("headwind").setup()
-  --   end
-  -- } 
-end)
+  use {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup{}
+    end
+  }
 
+  use {
+    "danymat/neogen",
+    config = function()
+        require('neogen').setup{ enabled = true }
+    end,
+    requires = "nvim-treesitter/nvim-treesitter"
+  }
+
+  use "zah/nim.vim"
+
+  use {
+    "windwp/nvim-spectre",
+    requires = "nvim-lua/plenary.nvim"
+  }
+
+end)

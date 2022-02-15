@@ -13,9 +13,11 @@ for _, server in pairs({
   "pyright",
   "tailwindcss",
   "tsserver",
-  "vimls",
-  "graphql",
-  "java_language_server"
+  "nimls",
+  "sumneko_lua",
+  -- "vimls",
+  -- "graphql",
+  "java_language_server",
 }) do
   local config = require ("lsp/servers/" .. server)
   lsp_config[server].setup(coq.lsp_ensure_capabilities(config))

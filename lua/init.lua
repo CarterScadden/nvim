@@ -1,13 +1,16 @@
 require "vim_conf/settings"
 
-require "plugins/variables"
+require "plugins/before_load"
 require "plugins/load"
-require "plugins/configure"
+require "plugins/after_load"
+require "plugins/after/index"
 
 require "vim_conf/commands"
 require "vim_conf/key_bindings"
+require "vim_conf/highlights"
 
 require "lsp/init"
 
 require "custom/index"
+
 
