@@ -15,6 +15,7 @@ for _, server in pairs({
   "tsserver",
   "nimls",
   "sumneko_lua",
+  "perlls",
   -- "vimls",
   -- "graphql",
   "java_language_server",

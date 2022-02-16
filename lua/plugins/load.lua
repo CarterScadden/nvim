@@ -15,7 +15,6 @@ return packer.startup(function(use)
     end
   }
 
-
   -- automatically resize windows
   use {
     "beauwilliams/focus.nvim",
@@ -24,6 +23,14 @@ return packer.startup(function(use)
     end
   }
 
+  -- smart pairs ()
+  use {
+    "ZhiyuanLck/smart-pairs",
+    event = "InsertEnter",
+    config = function()
+      require('pairs'):setup()
+    end
+  }
 
   -- ui plugin for nice looking stuff
   use "stevearc/dressing.nvim"
