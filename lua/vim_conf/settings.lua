@@ -26,7 +26,6 @@ vim.cmd [[
   set noswapfile
   set formatoptions-=ro
   set updatetime=200
-  set mouse=n
   set wrap
   set linebreak
   set timeoutlen=500
