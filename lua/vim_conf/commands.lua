@@ -7,6 +7,7 @@ vim.cmd [[
     command FormatJSON call FormatJSON()
     command FormatEslint call FormatEslint()
     command GPushUp call GPushUp()
+    command GPushO call GPushO()
 
   augroup END
 
@@ -43,6 +44,10 @@ vim.cmd [[
 
   function! GPushUp()
     :Git -c push.default=current push
+  endfunction
+
+  function! GPushO()
+    :G -c push.default=current push
   endfunction
 ]]
 

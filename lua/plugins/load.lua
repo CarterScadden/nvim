@@ -24,6 +24,7 @@ return packer.startup(function(use)
   }
 
   -- smart pairs ()
+  --[[
   use {
     "ZhiyuanLck/smart-pairs",
     event = "InsertEnter",
@@ -31,6 +32,7 @@ return packer.startup(function(use)
       require('pairs'):setup()
     end
   }
+  --]]
 
   -- ui plugin for nice looking stuff
   use "stevearc/dressing.nvim"
