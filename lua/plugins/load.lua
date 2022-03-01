@@ -9,8 +9,7 @@ return packer.startup(function(use)
     "xiyaowong/nvim-transparent",
     config = function()
       require("transparent").setup({
-        enable = false,
-        exclude = {},
+        enable = false, exclude = {},
       })
     end
   }

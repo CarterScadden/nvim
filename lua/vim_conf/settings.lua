@@ -18,6 +18,7 @@ vim.cmd [[
   set smartindent
   set foldmethod=indent
   set number
+  set relativenumber
   set wildmenu
   set foldenable
   set foldlevelstart=10
