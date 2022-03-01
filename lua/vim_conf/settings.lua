@@ -34,4 +34,5 @@ vim.cmd [[
   set ruler
   set noshowmode
   set nocursorline
+  set cmdheight=1
 ]]

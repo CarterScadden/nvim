@@ -1,9 +1,2 @@
 vim.cmd "colorscheme dracula"
-
--- hi VertSplit
-
---[[
-DraculaBoundary	DraculaBoundary VertSplit Folded FloatBorder FloatTitle
-StatusLineTerm	StatusLineTerm
-StatusLineTermNC	StatusLineTermNC
---]]
+vim.cmd "hi DraculaBoundary ctermfg=61 ctermbg=200 guifg=#6272A4 guibg=NONE"

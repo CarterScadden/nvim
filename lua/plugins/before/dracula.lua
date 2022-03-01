@@ -20,10 +20,11 @@ vim.g.dracula_colors = {
   bright_white = "#FFFFFF",
   menu = "#21222C",
   visual = "#3E4452",
-  -- gutter_fg = "#4B5263",
-  gutter_fg = "#fff",
+  gutter_fg = "#4B5263",
   nontext = "#3B4048",
 }
+
+-- call s:h('DraculaBoundary', s:comment, s:bgdark)
 
 vim.g.dracula_show_end_of_buffer = true
 -- use transparent background
