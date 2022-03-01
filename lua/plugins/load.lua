@@ -44,7 +44,10 @@ return packer.startup(function(use)
   }
 
   -- Status line
-  use "itchyny/lightline.vim"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- Theme
   use "dracula/vim"

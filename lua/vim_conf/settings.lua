@@ -30,9 +30,8 @@ vim.cmd [[
   set wrap
   set linebreak
   set timeoutlen=500
-  set laststatus=2
+  set laststatus=0
   set ruler
   set noshowmode
-  set termguicolors
   set nocursorline
 ]]
