@@ -108,9 +108,7 @@ return packer.startup(function(use)
   use 'andweeb/presence.nvim'
 
   -- testing
-  use {
-    "mfussenegger/nvim-dap"
-  }
+  use "mfussenegger/nvim-dap"
 
   use {
     "Pocco81/DAPInstall.nvim"
