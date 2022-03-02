@@ -21,7 +21,7 @@ vim.cmd [[
   nnoremap <C-l> <C-W>l
 
   " generate docs
-  nmap <A-;> :DogeGenerate<CR>
+  nmap <A-;> :Neogen<CR>
 
   " open ~/todo file with \ o
   nmap <leader>o :vsplit ~/todo/main.norg<CR>

@@ -53,9 +53,10 @@ return packer.startup(function(use)
   use "dracula/vim"
 
   -- For auto gen documentation
+  
   use {
-    "kkoomen/vim-doge",
-     run = "doge#install()"
+    "danymat/neogen",
+     requires = "nvim-treesitter/nvim-treesitter",
   }
 
   -- Multiple cursors!
@@ -153,9 +154,6 @@ return packer.startup(function(use)
 
   use {
     "danymat/neogen",
-    config = function()
-        require('neogen').setup{ enabled = true }
-    end,
     requires = "nvim-treesitter/nvim-treesitter"
   }
 
@@ -166,4 +164,7 @@ return packer.startup(function(use)
     requires = "nvim-lua/plenary.nvim"
   }
 
+  use "rcarriga/nvim-notify"
+
+  use "mvllow/modes.nvim"
 end)
